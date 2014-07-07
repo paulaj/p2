@@ -9,4 +9,4 @@ A password generator inspired by the xkcd comic: http://xkcd.com/936/
 No login required, but useful for sites where it is :)
 
 ## Outside code
-* TBD
+* Bootstrap
