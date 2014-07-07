@@ -6,9 +6,13 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
 <html>
 <head>
   <title>Password Generator</title>
+  <?php require 'logic.php'; ?>
 </head>
 <body>
   <h1>XKCD Password Generator</h1>
+  <h2> <?php
+        echo $password;
+       ?></h2>
   <p>
       
       <form method='POST' action='index.php'>
@@ -17,22 +21,9 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
         <input type='submit' value='Generate my Password!'><br>
       </form>
 
-      <?php
-      $numWords = 0;
-      if ($_POST['numWords']){
-        $numWords= $_POST['numWords'];
-      }
-       
-      
-      
-       ?>
-
 
        <?php
-       if ($numWords > 0) {
-        echo 'You asked for '. $numWords. ' words';
-      }
-       
+        echo $comment;
        ?>
   </p>
 </body>
