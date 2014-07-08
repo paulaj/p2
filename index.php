@@ -15,14 +15,20 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
   <style type="text/css">
 
     body{ width:99%; }
-    img{ width: 100%; }   
+    img{ 
+      width: 100%; 
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }   
     h1,h3{ color: #5bc0de; }
     .main-panel{
       margin-top:30px;
       background-color: white;
       border-color: #5bc0de;
     }
-    .result{
+    .result{  
+      word-wrap:break-word;
       width:90%;
     }
     #favorite{
@@ -30,6 +36,8 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
       margin-left:5%;
       margin-top:1%;
     }
+
+    
   </style>
 
 </head>
@@ -37,7 +45,7 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-10">
-      <div class=" main-panel center-block panel panel-default">
+      <div class=" main-panel panel panel-default">
         <div class="panel-body">
             </br>
             <h1 class="text-center">XKCD Password Generator</h1>
@@ -83,9 +91,9 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
                       <div class="checkbox">
 
                         <label>
-                          <input type="checkbox" name="includeWord" value="true"> Include your favorite word [45 characters max]<br> 
+                          <input type="checkbox" id="includeFavorite" name="includeWord" value="true"> Include your favorite word [20 characters max]<br> 
                         </label>
-                        <input class="form-control" id="favorite" type='text' name='favoriteWord' maxlength="45" placeholder="Enter your favorite word "><br>
+                        <input class="form-control" id="favorite" type='text' name='favoriteWord' maxlength="20" placeholder="Enter your favorite word " disabled ="true"><br>
                           
                       </div>
                       <button type='submit' class="btn btn-info"> Generate my Password! </button><br> 
@@ -93,12 +101,12 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
                   </div>
                 </div>
               </div>
-              <div class="row text-center">
+              <div class="row">
                 <h3>Your Shiny New Password:</h3>
                 <div class="panel panel-default">
                   <div class="panel-body">
                     <?php if ($error==''): ?>
-                    <h2 class="result"> <?php echo $password; ?></h2>
+                    <h2 class="result text-center"> <?php echo $password; ?></h2>
                     <?php else: ?>
                     <div class="alert alert-danger" role="alert"><?php echo $error; ?></div> 
                     <?php endif; ?>
@@ -123,4 +131,21 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
     <div class="col-md-1"></div>
   </div>
 </body>
+
+<script type="text/javascript">
+  $("#includeFavorite").click(function(){
+    console.log($("#includeFavorite")[0].checked)
+    if ($("#includeFavorite")[0].checked){
+      console.log("clicked");
+         $("#favorite")[0].disabled = false;
+      }
+    else{
+      console.log("unclicked");
+        $("#favorite")[0].disabled = true;
+        $("#favorite")[0].value = "";
+      }
+    }
+  );
+
+  </script>
 </html>
