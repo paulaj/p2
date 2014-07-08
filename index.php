@@ -3,11 +3,11 @@ error_reporting(E_ALL);       # Report Errors, Warnings, and Notices
 ini_set('display_errors', 1); # Display errors on page (instead of a log file)
 ?>
 <!DOCTYPE html>
-<meta charset="utf-8">
 <html>
-
 <head>
   <title>Password Generator</title>
+  <!-- Not having the tag below upset my firefox -->
+  <meta charset="utf-8"> 
   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="bootstrap/js/bootstrap.min.js"></script>
@@ -116,7 +116,7 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
                   </div>
                 </div>
               </div>
-              </br>
+              <br/>
               <div class="col-md-5">
                 <h3 class="text-center"> The Comic That Inspired This </h3>
                 <div class="panel panel-default">
