@@ -6,6 +6,7 @@ http://p2-pjacobs.gopagoda.com/
 
 ## Description
 A password generator inspired by the xkcd comic: http://xkcd.com/936/
+The inputs are pretty self explanatory. I used an image of the comic rather than a description.
 
 ## Details for teaching team
 No login required, but useful for sites where it is :)
