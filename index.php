@@ -13,25 +13,23 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
   <?php require 'logic.php'; ?>
 
   <style type="text/css">
-     body{
-      width:99%;
-    }
-    img{
-      width: 100%;
-    }
-   
+
+    body{ width:99%; }
+    img{ width: 100%; }   
+    h1,h3{ color: #5bc0de; }
     .main-panel{
       margin-top:30px;
       background-color: white;
       border-color: #5bc0de;
     }
-
-    h1,h3{
-      color: #5bc0de;
+    .result{
+      width:90%;
     }
-
-
-
+    #favorite{
+      width:45%;
+      margin-left:5%;
+      margin-top:1%;
+    }
   </style>
 
 </head>
@@ -41,7 +39,6 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
     <div class="col-md-10">
       <div class=" main-panel center-block panel panel-default">
         <div class="panel-body">
-          <!-- <div class="row"> -->
             </br>
             <h1 class="text-center">XKCD Password Generator</h1>
             <h4 class="text-center">Creates XKCD style passwords</h4></br>
@@ -79,7 +76,7 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
                       </div>
                       <div class="checkbox">
                         <label>
-                          <input type="checkbox" name="capitalizeFirst" value="true">Capitalize first letter <br>
+                          <input type="checkbox" name="capitalizeFirst" value="true">Capitalize first letter of this password <br>
                         </label>
                       </div>
                                           
@@ -87,8 +84,8 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
 
                         <label>
                           <input type="checkbox" name="includeWord" value="true"> Include your favorite word [45 characters max]<br> 
-                          <input class="form-control"  type='text' name='favoriteWord' maxlength="45" placeholder="Enter your favorite word "><br>
                         </label>
+                        <input class="form-control" id="favorite" type='text' name='favoriteWord' maxlength="45" placeholder="Enter your favorite word "><br>
                           
                       </div>
                       <button type='submit' class="btn btn-info"> Generate my Password! </button><br> 
@@ -120,7 +117,6 @@ ini_set('display_errors', 1); # Display errors on page (instead of a log file)
               </div>
             </div>
             <div class="col-md-1"> </div>
-          <!-- </div> -->
         </div>
       </div>
     </div>
